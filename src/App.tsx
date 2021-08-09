@@ -6,16 +6,13 @@ import { RootState } from './redux/reducers/rootReducer';
 
 
 function App() {
-
   const dispatch = useDispatch()
-  const notesState = useSelector((state:RootState) => state.notes);
-
+  const notesState = useSelector((state: RootState) => state.notes.notes);
   console.log(notesState)
   
-
   useEffect(() => {
 
-    dispatch(loadNotes)
+    dispatch(loadNotes())
 
   }, [])
 
@@ -26,13 +23,13 @@ function App() {
     <div className="App">
 
       <h1>Hello</h1>
-{/* 
-      {notesState.map(note => (
+
+      {notesState && notesState.map(note => (
 
         <div key={note.id}>
           <p>{note.title}</p>
         </div>
-      ))} */}
+      ))}
     
     </div>
   );
