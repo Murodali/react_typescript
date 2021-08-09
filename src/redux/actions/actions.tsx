@@ -2,14 +2,15 @@ import * as types from './actionTypes';
 import axios from 'axios';
 import { Dispatch } from 'redux';
 
-export const loadNotes = () => async( dispatch: Dispatch ) => {
+export const loadNotes = () => async( dispatch: Dispatch<types.NotesActionTypes>) => {
 
     try{
      const res = await axios.get('http://localhost:5000/todos');
 
      dispatch( {
          type: types.LOAD_NOTES,
-         payload: res.data,
+         payload: res.data
+         
      })
 
      console.log(res.data)

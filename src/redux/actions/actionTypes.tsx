@@ -1,24 +1,25 @@
 export const LOAD_NOTES = 'LOAD_NOTES';
 
 
+export interface Note {
+  title: string;
+  completed: boolean;
+  id: number;
+}
 
-export interface Notes {
-    notes: (Note)[];
-    loading:false,
-    note: Note
-  }
-  export interface Note {
-    title: string;
-    completed: boolean;
-    id: number;
-  }
+
+export interface Default {
+  notes: Note[],
+  loading:boolean,
+}
+
+
 
 export interface loadNotesAction {
     type: typeof LOAD_NOTES,
-    payload: Notes
+    payload: Note[]
 }
 
-export type NotesDispatchTypes = Notes
 
 export type NotesActionTypes = loadNotesAction
 
