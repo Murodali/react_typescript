@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+}
+
+.sidebar {
+  display: flex;
+  background-color: #ff9966;
+  flex: 0.2;
+  height: 100vh;
+
+  h2 {
+    text-align: center;
+    margin: 5px auto;
+  }
+}
+
+.notesist {
+  display: flex;
+  flex: 0.3;
+  height: 100vh;
+  background-color: #ffcc66;
+  flex-direction: column;
+}
+
+.note {
+  padding: 10px;
+  background-color: #ffe9ac;
+  margin: 5px 2px;
+  border-radius: 8px;
+}

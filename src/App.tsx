@@ -1,35 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
-import { loadNotes } from './redux/actions/actions';
-import { RootState } from './redux/reducers/rootReducer';
+import './App.scss';
+import NotesList from './components/NotesList';
+import Sidebar from './components/Sidebar';
 
 
-function App() {
-  const dispatch = useDispatch()
-  const notesState = useSelector((state: RootState) => state.notes.notes);
-  console.log(notesState)
-  
-  useEffect(() => {
 
-    dispatch(loadNotes())
-
-  }, [])
-
-  console.log(notesState)
+function App(){
 
 
   return (
-    <div className="App">
+    <div className="app">
 
-      <h1>Hello</h1>
+      <Sidebar></Sidebar>
+     <NotesList></NotesList>
 
-      {notesState && notesState.map(note => (
-
-        <div key={note.id}>
-          <p>{note.title}</p>
-        </div>
-      ))}
     
     </div>
   );
