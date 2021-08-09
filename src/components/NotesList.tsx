@@ -3,6 +3,7 @@ import React,{useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { loadNotes } from '../redux/actions/actions';
 import { RootState } from '../redux/reducers/rootReducer';
+import Main from './Main';
 import NoteComponent from './NoteComponent';
 
 
@@ -25,9 +26,14 @@ const NotesList:React.FC= () => {
 
     return (
         <div className="notesist">
+            
+            <div className="text">
+                <h2>Search</h2>
+                <p>+</p>
+            </div>
 
             <div className="search">
-                <input type="text" placeholder="search"></input>
+                <input type="text" placeholder="search..."></input>
             </div>
 
             {notesState.map(note => (
